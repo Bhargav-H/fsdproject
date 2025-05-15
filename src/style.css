@@ -1,3 +1,7 @@
+/* Import Orbitron for Tron theme */
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Orbitron:wght@500&family=Sono:wght@400;600&display=swap');
+
+/* RESET & BASE */
 * {
   margin: 0;
   padding: 0;
@@ -9,10 +13,11 @@ html {
 }
 
 body {
-  background-color: #292524;
-  color: #fafaf9;
+  background-color: #d0f4de; /* pastel mint */
+  color: #4a4a4a;            /* soft dark gray */
   font-family: 'Sono', sans-serif;
   padding: 48px 64px 0;
+  transition: background-color 0.3s, color 0.3s, font-family 0.3s;
 }
 
 #root {
@@ -25,6 +30,7 @@ section {
   padding-bottom: 40px;
 }
 
+/* HEADER & LOGO */
 .header {
   margin-bottom: 40px;
   display: flex;
@@ -43,21 +49,24 @@ section {
   height: 68px;
 }
 
+/* FORM */
 .fact-form {
-  background-color: #44403c;
+  background-color: #e6e2e7; /* pastel lavender */
   margin-bottom: 40px;
   padding: 16px 40px;
   display: flex;
   align-items: center;
   gap: 16px;
   border-radius: 16px;
+  color: #4a4a4a;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .fact-form input,
 .fact-form select {
-  background-color: #78716c;
+  background-color: #f0e9f0; /* very light pastel purple */
   width: 220px;
-  border: none;
+  border: 1px solid #d1c4e9;
   border-radius: 100px;
   padding: 16px;
   font-size: 18px;
@@ -70,7 +79,7 @@ section {
 }
 
 .fact-form input::placeholder {
-  color: #a8a29e;
+  color: #b7b7b7;
 }
 
 .fact-form span {
@@ -79,6 +88,7 @@ section {
   margin-right: 18px;
 }
 
+/* TITLES & MESSAGES */
 h1 {
   font-size: 4.2rem;
   text-transform: uppercase;
@@ -100,17 +110,22 @@ h1 {
   margin-top: 24px;
 }
 
+/* MAIN LAYOUT */
 .main {
   display: grid;
   grid-template-columns: 250px 1fr;
   gap: 48px;
   height: calc(100vh - 68px - 40px - 48px - 48px);
+  background-color: #fef9f9; /* pastel pinkish */
+  border-radius: 16px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
+/* FACT CARDS */
 .fact {
   font-size: 2rem;
   line-height: 1.4;
-  background-color: #44403c;
+  background-color: #f7eafc; /* pastel purple-pink */
   margin-bottom: 16px;
   padding: 16px 30px;
   letter-spacing: -1px;
@@ -118,8 +133,11 @@ h1 {
   align-items: center;
   gap: 24px;
   border-radius: 16px;
+  color: #4a4a4a;
+  transition: background-color 0.3s, color 0.3s;
 }
 
+/* TAGS */
 .tag {
   text-transform: uppercase;
   font-size: 1.4rem;
@@ -128,8 +146,14 @@ h1 {
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 100px;
+  color: #4a4a4a;
+  background-color: #c3aed6; /* pastel purple */
+  text-shadow: none;
+  filter: none;
+  transition: filter 0.3s, background-color 0.3s, color 0.3s;
 }
 
+/* VOTE BUTTONS */
 .vote-buttons {
   display: flex;
   flex-shrink: 0;
@@ -138,59 +162,62 @@ h1 {
 }
 
 .vote-buttons button {
-  background-color: #78716c;
-  color: inherit;
+  background-color: #d8bfd8; /* pastel thistle */
+  color: #4a4a4a;
   font-family: inherit;
   font-weight: 600;
-  border: none;
+  border: 1px solid #c3aed6;
   border-radius: 100px;
   font-size: 18px;
   padding: 6px 12px;
-  transition: 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .vote-buttons button:hover {
-  background-color: #57534e;
+  background-color: #c3aed6;
   cursor: pointer;
 }
 
 .vote-buttons button:disabled {
-  background-color: #44403c;
-  cursor: pointer;
+  background-color: #e6e2e7;
+  cursor: not-allowed;
 }
 
+/* LISTS & LINKS */
 ul {
   list-style: none;
 }
 
 .source:link,
 .source:visited {
-  color: #a8a29e;
+  color: #a398d1; /* pastel lavender link */
   text-decoration: none;
   margin-left: 12px;
-  transition: 0.3s;
+  transition: color 0.3s;
 }
 
 .source:hover,
 .source:active {
-  color: #3b82f6;
+  color: #7e74b8; /* darker pastel purple */
 }
 
+/* BUTTONS */
 .btn {
   font-family: 'Coiny', sans-serif;
-  color: inherit;
+  color: #4a4a4a;
   line-height: 1;
   text-transform: uppercase;
   font-size: 17px;
   padding: 16px 0 13px;
-  background-image: linear-gradient(135deg, #3b82fa, #ef4444, #16a34a, #eab300);
+  background-image: linear-gradient(135deg, #d1c4e9, #f9c6c9, #b2f7ef, #ffe5b4);
   border: none;
   border-radius: 100px;
-  transition: 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .btn:hover {
   cursor: pointer;
+  background-color: #b19cd9;
   transform: scale(110%) rotate(-2deg);
 }
 
@@ -219,6 +246,107 @@ ul {
   margin-right: 10px;
 }
 
+/* THEME TOGGLE BUTTON LAYOUT */
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-theme-toggle {
+  margin-left: 1rem;
+}
+
+/* ========== DARK MODE: SPACE / TRON THEME ========== */
+body.dark {
+  background-color: #0a0a23;
+  color: #00fff7;
+  font-family: 'Orbitron', 'Sono', sans-serif;
+  background-image: radial-gradient(circle at center, #0a0a23 0%, #000000 80%);
+  transition: background-color 0.3s, color 0.3s, font-family 0.3s;
+}
+
+body.dark .main,
+body.dark .facts-list {
+  background-color: #120044;
+  color: #00fff7;
+  box-shadow: 0 0 20px #00fff744;
+  border-radius: 16px;
+}
+
+body.dark .fact-form {
+  background-color: #1a0033;
+  color: #00fff7;
+  box-shadow: 0 0 10px #00fff799;
+}
+
+body.dark .fact-form input,
+body.dark .fact-form select {
+  background-color: #0a0a23;
+  color: #00fff7;
+  border: 1px solid #00fff7;
+}
+
+body.dark .fact {
+  background-color: #120044;
+  color: #00fff7;
+  box-shadow: 0 0 10px #00fff799;
+}
+
+body.dark .tag {
+  background-color: #00fff7;
+  color: #120044;
+  text-shadow: 0 0 8px #00fff7, 0 0 2px #fff;
+  filter: none;
+}
+
+body.dark .vote-buttons button {
+  background-color: #1a0033;
+  color: #00fff7;
+  border: 1px solid #00fff7;
+  box-shadow: 0 0 6px #00fff7aa;
+}
+
+body.dark .vote-buttons button:hover {
+  background-color: #00fff7;
+  color: #120044;
+  box-shadow: 0 0 12px #00fff7;
+}
+
+body.dark .vote-buttons button:disabled {
+  background-color: #120044;
+  color: #00fff799;
+  border: 1px solid #00fff733;
+}
+
+body.dark .btn,
+body.dark .btn-category,
+body.dark .btn-all-categories {
+  background-image: linear-gradient(135deg, #0ff 10%, #00f0ff 40%, #00fff7 80%);
+  color: #120044;
+  box-shadow: 0 0 15px #00fff7;
+  border: none;
+}
+
+body.dark .btn:hover,
+body.dark .btn:focus {
+  background-color: #00e0d9;
+  color: #120044;
+  box-shadow: 0 0 20px #00fff7;
+}
+
+body.dark .source:link,
+body.dark .source:visited {
+  color: #00fff7;
+}
+
+body.dark .source:hover,
+body.dark .source:active {
+  color: #0ff;
+}
+
+/* Responsive media queries */
 @media (max-width: 1200px) {
   .fact {
     flex-direction: column;
